@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nodikar Paints - Premium Painting Services</title>
+    <title>Nodikar Paints (U) Ltd - Premium Paint Manufacturers</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <style>
@@ -11,6 +11,7 @@
             --blue: #2D5BFF;
             --yellow: #FFC107;
             --green: #4CAF50;
+            --red: #FF5252;
             --white: #FFFFFF;
             --light-gray: #F9F9F9;
             --dark-text: #333333;
@@ -68,6 +69,15 @@
         .btn:hover {
             transform: translateY(-5px);
             background-color: #1a46e0;
+        }
+        
+        .btn-yellow {
+            background-color: var(--yellow);
+            color: var(--dark-text);
+        }
+        
+        .btn-yellow:hover {
+            background-color: #e6ac00;
         }
         
         .section-title {
@@ -243,14 +253,14 @@
             transform: scale(1.05);
         }
         
-        /* Services Section */
-        .services-grid {
+        /* Products Section */
+        .products-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 30px;
         }
         
-        .service-card {
+        .product-card {
             background-color: var(--white);
             border-radius: var(--radius);
             padding: 30px;
@@ -259,11 +269,11 @@
             transition: var(--transition);
         }
         
-        .service-card:hover {
+        .product-card:hover {
             transform: translateY(-10px);
         }
         
-        .service-icon {
+        .product-icon {
             width: 80px;
             height: 80px;
             background-color: var(--light-gray);
@@ -276,18 +286,50 @@
             color: var(--blue);
         }
         
-        /* Portfolio Section */
-        .portfolio {
+        /* Manufacturing Section */
+        .manufacturing {
             background-color: var(--light-gray);
         }
         
-        .portfolio-grid {
+        .process-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 50px;
+            flex-wrap: wrap;
+        }
+        
+        .step {
+            flex-basis: 23%;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background-color: var(--blue);
+            color: var(--white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: bold;
+            margin: 0 auto 20px;
+        }
+        
+        /* Gallery Section */
+        .gallery {
+            background-color: var(--light-gray);
+        }
+        
+        .gallery-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
         
-        .portfolio-item {
+        .gallery-item {
             border-radius: var(--radius);
             overflow: hidden;
             position: relative;
@@ -295,14 +337,14 @@
             box-shadow: var(--shadow);
         }
         
-        .portfolio-image {
+        .gallery-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
             transition: var(--transition);
         }
         
-        .portfolio-overlay {
+        .gallery-overlay {
             position: absolute;
             top: 0;
             left: 0;
@@ -317,11 +359,11 @@
             transition: var(--transition);
         }
         
-        .portfolio-item:hover .portfolio-overlay {
+        .gallery-item:hover .gallery-overlay {
             opacity: 1;
         }
         
-        .portfolio-item:hover .portfolio-image {
+        .gallery-item:hover .gallery-image {
             transform: scale(1.1);
         }
         
@@ -550,6 +592,10 @@
             .hero-image {
                 width: 50%;
             }
+            
+            .step {
+                flex-basis: 48%;
+            }
         }
         
         @media (max-width: 768px) {
@@ -576,6 +622,10 @@
             .hero-image {
                 display: none;
             }
+            
+            .step {
+                flex-basis: 100%;
+            }
         }
     </style>
 </head>
@@ -584,8 +634,8 @@
     <header id="header">
         <div class="container header-container">
             <a href="#" class="logo">
-                <i class="fas fa-paint-roller"></i>
-                Nodikar Paints
+                <i class="fas fa-industry"></i>
+                Nodikar Paints (U) Ltd
             </a>
             
             <button class="mobile-menu-btn">
@@ -595,8 +645,9 @@
             <ul class="nav-links">
                 <li><a href="#home">Home</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#portfolio">Portfolio</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#manufacturing">Manufacturing</a></li>
+                <li><a href="#gallery">Gallery</a></li>
                 <li><a href="#testimonials">Testimonials</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
@@ -607,9 +658,9 @@
     <section id="home" class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Nodikar Paints</h1>
-                <p>Bringing Color to Life</p>
-                <a href="#contact" class="btn hero-btn">Get a Free Quote</a>
+                <h1>Nodikar Paints (U) Ltd</h1>
+                <p>We Deliver Your Dream</p>
+                <a href="#products" class="btn hero-btn">Explore Our Products</a>
             </div>
         </div>
         <div class="hero-image">
@@ -628,10 +679,10 @@
             <h2 class="section-title">About <span>Us</span></h2>
             <div class="about-content">
                 <div class="about-text">
-                    <h3>Transforming Spaces Since 2005</h3>
-                    <p>Nodikar Paints is a premium painting company dedicated to bringing color and life to your spaces. With over 15 years of experience, we take pride in our attention to detail, quality craftsmanship, and commitment to customer satisfaction.</p>
-                    <p>Our team of professional painters is trained in the latest techniques and uses only the highest quality materials to ensure a flawless finish that lasts. Whether it's a residential home or commercial space, we approach each project with the same level of care and professionalism.</p>
-                    <p>We believe that the right colors can transform any space and elevate your mood. Let us help you choose the perfect palette for your home or business.</p>
+                    <h3>Premium Paint Manufacturers Since 2005</h3>
+                    <p>Nodikar Paints (U) Ltd is a leading paint manufacturing company dedicated to producing high-quality paints that bring color and protection to your spaces. With over 15 years of experience, we take pride in our innovative formulations, quality craftsmanship, and commitment to customer satisfaction.</p>
+                    <p>Our state-of-the-art manufacturing facility uses the latest technology and highest quality raw materials to ensure our paints meet the most stringent quality standards. Whether it's for residential, commercial, or industrial use, we produce paints that stand the test of time.</p>
+                    <p>We believe that the right colors can transform any space and elevate your mood. Let us help you deliver your dream with our extensive range of premium paint products.</p>
                 </div>
                 <div class="about-image">
                     <svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
@@ -646,31 +697,338 @@
         </div>
     </section>
 
-    <!-- Services Section -->
-    <section id="services" class="services">
+    <!-- Products Section -->
+    <section id="products" class="products">
         <div class="container">
-            <h2 class="section-title">Our <span>Services</span></h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <div class="service-icon">
+            <h2 class="section-title">Our <span>Products</span></h2>
+            <div class="products-grid">
+                <div class="product-card">
+                    <div class="product-icon">
                         <i class="fas fa-home"></i>
                     </div>
-                    <h3>Residential Painting</h3>
-                    <p>Transform your home with our expert interior and exterior residential painting services. We help you choose the perfect colors for every room.</p>
+                    <h3>Interior Paints</h3>
+                    <p>Our interior paint range offers exceptional coverage, easy application, and beautiful finishes that transform living spaces.</p>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">
+                <div class="product-card">
+                    <div class="product-icon">
                         <i class="fas fa-building"></i>
                     </div>
-                    <h3>Commercial Painting</h3>
-                    <p>Enhance your business environment with our professional commercial painting services. Minimal disruption, maximum impact.</p>
+                    <h3>Exterior Paints</h3>
+                    <p>Weather-resistant exterior paints designed to protect and beautify your property against the elements.</p>
                 </div>
                 
-                <div class="service-card">
-                    <div class="service-icon">
-                        <i class="fas fa-paint-brush"></i>
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-industry"></i>
                     </div>
-                    <h3>Interior & Exterior</h3>
-                    <p>Complete interior and exterior painting solutions using weather-resistant, durable paints that protect and beautify your property.</p>
-  </div>
+                    <h3>Industrial Coatings</h3>
+                    <p>Specialized coatings for industrial applications offering superior protection and durability.</p>
+                </div>
+                
+                <div class="product-card">
+                    <div class="product-icon">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3>Primers & Sealers</h3>
+                    <p>High-quality primers and sealers that ensure perfect adhesion and long-lasting paint jobs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Manufacturing Section -->
+    <section id="manufacturing" class="manufacturing">
+        <div class="container">
+            <h2 class="section-title">Our <span>Manufacturing Process</span></h2>
+            <div class="about-text">
+                <p>At Nodikar Paints, we follow a rigorous manufacturing process that ensures the highest quality products. Our state-of-the-art facility combines advanced technology with skilled craftsmanship to produce paints that exceed industry standards.</p>
+            </div>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Raw Material Selection</h3>
+                    <p>We source only the highest quality raw materials from trusted suppliers</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Precision Formulation</h3>
+                    <p>Our experts create precise formulations for consistent, reliable results</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Quality Manufacturing</h3>
+                    <p>Advanced automated systems ensure perfect batch consistency</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Rigorous Testing</h3>
+                    <p>Every batch undergoes multiple quality checks before approval</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <h2 class="section-title">Product <span>Gallery</span></h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" class="gallery-image">
+                        <rect x="0" y="0" width="400" height="300" fill="#2d5bff" />
+                        <rect x="100" y="50" width="200" height="200" fill="#ffffff" />
+                        <circle cx="200" cy="150" r="50" fill="#ffc107" />
+                    </svg>
+                    <div class="gallery-overlay">
+                        <h3>Colorful Interior</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" class="gallery-image">
+                        <rect x="0" y="0" width="400" height="300" fill="#4caf50" />
+                        <rect x="50" y="50" width="300" height="200" fill="#ffffff" />
+                        <rect x="100" y="100" width="200" height="100" fill="#2d5bff" />
+                    </svg>
+                    <div class="gallery-overlay">
+                        <h3>Exterior Application</h3>
+                    </div>
+                </div>
+                
+                <div class="gallery-item">
+                    <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" class="gallery-image">
+                        <rect x="0" y="0" width="400" height="300" fill="#ffc107" />
+                        <polygon points="200,50 300,150 200,250 100,150" fill="#2d5bff" />
+                    </svg>
+                    <div class="gallery-overlay">
+                        <h3>Manufacturing Facility</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Client <span>Testimonials</span></h2>
+            <div class="testimonials-container">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"Nodikar Paints have been our preferred supplier for over 5 years. The quality of their products is exceptional, and their technical support team is always available to help with any questions."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">RC</div>
+                        <div>
+                            <h4>Robert Chen</h4>
+                            <p>Construction Manager</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        <p>"As a painting contractor, I rely on quality products to keep my clients happy. Nodikar Paints never disappoints - their paints have excellent coverage and durability, and the color range is fantastic."</p>
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SJ</div>
+                        <div>
+                            <h4>Sarah Johnson</h4>
+                            <p>Painting Contractor</p>
+                            <div class="testimonial-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact <span>Us</span></h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Get In Touch</h3>
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div>
+                            <h4>Phone</h4>
+                            <p>+256 (0) 700 123456</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>info@nodikarpaints.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                            <h4>Address</h4>
+                            <p>123 Industrial Area, Kampala, Uganda</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div>
+                            <h4>Business Hours</h4>
+                            <p>Monday-Friday: 8:00 AM - 5:00 PM</p>
+                            <p>Saturday: 9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <h3>Send a Message</h3>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-input" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-input" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-input" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-input" placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            
+            <div class="map-container">
+                <i class="fas fa-map-marked-alt" style="font-size: 48px; color: #2d5bff;"></i>
+                <span style="margin-left: 15px;">Kampala, Uganda</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-about">
+                    <a href="#" class="footer-logo">
+                        <i class="fas fa-industry"></i>
+                        Nodikar Paints (U) Ltd
+                    </a>
+                    <p>We deliver your dream with premium quality paints manufactured to the highest standards.</p>
+                    <div class="footer-social">
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#products">Products</a></li>
+                        <li><a href="#manufacturing">Manufacturing</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="#">Interior Paints</a></li>
+                        <li><a href="#">Exterior Paints</a></li>
+                        <li><a href="#">Industrial Coatings</a></li>
+                        <li><a href="#">Primers & Sealers</a></li>
+                        <li><a href="#">Color Solutions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-links">
+                    <h4>Contact Info</h4>
+                    <ul>
+                        <li><i class="fas fa-phone"></i> +256 (0) 700 123456</li>
+                        <li><i class="fas fa-envelope"></i> info@nodikarpaints.com</li>
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Industrial Area, Kampala, Uganda</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Nodikar Paints (U) Ltd. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        window.addEventListener('scroll', function() {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenuBtn.addEventListener('click', function() {
+            navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+        });
+    </script>
+</body>
+</html>
